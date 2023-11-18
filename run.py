@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi_utils.session import FastAPISessionMaker
 from fastapi_utils.tasks import repeat_every
 from config import get_settings
 from scheduler_app.tasks import task_add_current_temperature_in_city
