@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     api_key: str = "17fe61111a3d5c289dfa7505eb46a034"
     latitude: float = .0
     longitude: float = .0
+    x_token: str = "123"
 
     class Config:
         env_file = ".env"
