@@ -11,8 +11,9 @@ from starlette.responses import JSONResponse
 
 
 app = FastAPI()
+# create database and tables
 models.Base.metadata.create_all(bind=engine)
-
+# register route
 app.include_router(weather_router)
 
 
@@ -35,7 +36,6 @@ async def validation_exception_handler(request, exc):
     for error in exc_json:
         response["error"]['message'].append(error['loc'][-1]+f": {error['msg']}")
     return JSONResponse(response, status_code=422)
-
 
 
 if __name__ == '__main__':
